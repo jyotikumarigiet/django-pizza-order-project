@@ -1,0 +1,35 @@
+{%extends "basepage.html"%}
+
+{% block start %}
+
+        <div class="container card shadow-lg mt-5">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">S.NO.</th>
+                        <th scope="col">Total</th>
+
+                        <th scope="col">Date</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for orders in orders %}
+                    <tr>
+                            <th scope="row">{{forloop.counter}}</th>
+                        <td>{{orders.get_cart_total}}</td>
+
+                        <td>
+                        {{orders.created_at}}
+                        </td>
+                
+                    </tr>
+                    {% endfor %}
+
+    
+                </tbody>
+            </table>
+
+        </div>
+
+{% endblock %}
